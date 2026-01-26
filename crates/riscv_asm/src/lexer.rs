@@ -285,7 +285,7 @@ fn classify_identifier(s: &str) -> TokenKind {
         "add" | "sub" | "sll" | "slt" | "sltu" | "xor" | "srl" | "sra" | "or" | "and" | // R-type
         "addi" | "slti" | "sltiu" | "xori" | "ori" | "andi" | "slli" | "srli" | "srai" | // I-type (ALU)
         "lb" | "lh" | "lw" | "lbu" | "lhu" | // I-type (Load)
-        "jalr" | "j" | "ret" | // I-type (Jump)
+        "jalr" | "j" | "ret" | "call" | // I-type (Jump)
         "sb" | "sh" | "sw" | // S-type
         "beq" | "bne" | "blt" | "bge" | "bltu" | "bgeu" | // B-type
         "lui" | "auipc" | // U-type
