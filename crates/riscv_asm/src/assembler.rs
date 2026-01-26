@@ -954,7 +954,7 @@ fn convert_to_isa_instruction(
         }
 
         // Special case for pseudo-instruction 'j label' -> 'jal x0, label'
-        // TODO: Propagate this feature to the lexer
+        // DONE: Propagate this feature to the lexer
         "j" if instr.operands.len() == 1 => {
             let target = convert_operand(&instr.operands[0])?;
             Ok(Jal {
@@ -977,7 +977,7 @@ fn convert_to_isa_instruction(
         }
 
         // Special case for pseudo-instruction 'ret' -> 'jalr x0, ra, 0'
-        // TODO: Propagate this feature to the lexer
+        // DONE: Propagate this feature to the lexer
         "ret" if instr.operands.is_empty() => {
             Ok(Jalr {
                 rd: Register::new(0).unwrap(),
