@@ -953,7 +953,7 @@ fn convert_to_isa_instruction(
             Ok(Jal { rd, target })
         }
 
-        "call" if instr.operands.len() == 2 => {
+        "call" if instr.operands.len() == 1 => {
             let target = convert_operand(&instr.operands[0])?;
             Ok(Jal {
                 rd: Register::new(1).unwrap(),
